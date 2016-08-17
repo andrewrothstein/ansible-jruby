@@ -1,0 +1,34 @@
+---
+- name: download jruby
+  become: yes
+  become_user: root
+  get_url: >-
+    url={{jruby_url}}
+    dest=/tmp/{{jruby_tgz}}
+    mode=0644
+
+- name: unarchive
+  become: yes
+  become_user: root
+  unarchive: >-
+    src=/tmp/{{jruby_tgz}}
+    dest=/opt
+    creates=/opt/{{jruby_subdir}}
+
+- name: link
+  become: yes
+  become_user: root
+  file: >-
+    src=/opt/{{jruby_subdir}}
+    dest=/opt/jruby
+    state=link
+
+- name: add to path
+  become: yes
+  become_user: root
+  with_items:
+    - etc/profile.d/jruby.sh
+  template: >-
+    src={{item}}.j2
+    dest=/{{item}}
+    mode=0644

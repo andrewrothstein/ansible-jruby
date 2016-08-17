@@ -1,0 +1,5 @@
+---
+jruby_name: 'jruby-bin-{{jruby_ver}}'
+jruby_subdir: 'jruby-{{jruby_ver}}'
+jruby_tgz : '{{jruby_name}}.tar.gz'
+jruby_url: '{{jruby_mirror}}/{{jruby_ver}}/{{jruby_tgz}}'
