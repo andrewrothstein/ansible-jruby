@@ -21,6 +21,9 @@ galaxy_info:
     - name: Debian
       versions:
         - jessie
+    - name: Alpine
+      versions:
+        - all
   galaxy_tags:
     - development
 
@@ -29,4 +32,3 @@ dependencies:
     version: v1.0.9
   - role: andrewrothstein.java-oracle-jre
     version: v2.0.3
-  
