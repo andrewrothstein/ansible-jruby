@@ -17,13 +17,16 @@ galaxy_info:
         - 25
     - name: Ubuntu
       versions:
-        - xenial
+        - all
+    - name: Debian
+      versions:
+        - jessie
   galaxy_tags:
     - development
 
 dependencies:
   - role: andrewrothstein.unarchive-deps
-    version: v1.0.8
+    version: v1.0.9
   - role: andrewrothstein.java-oracle-jre
-    version: v1.0.2
+    version: v2.0.3
   

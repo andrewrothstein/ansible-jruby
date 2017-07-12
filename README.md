@@ -1,6 +1,6 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-jruby.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-jruby)
 andrewrothstein.jruby
 =====================
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-jruby.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-jruby)
 
 Installs Java and [JRuby](http://jruby.org/).
 

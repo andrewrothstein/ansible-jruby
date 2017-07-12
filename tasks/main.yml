@@ -5,12 +5,14 @@
   get_url:
     url: '{{jruby_url}}'
     dest: /tmp/{{jruby_tgz}}
+    checksum: '{{jruby_checksum}}'
     mode: 0644
 
 - name: unarchive
   become: yes
   become_user: root
-  unarchive: 
+  unarchive:
+    copy: no
     src: /tmp/{{jruby_tgz}}
     dest: '{{jruby_install_parent_dir}}'
     creates: '{{jruby_install_dir}}'

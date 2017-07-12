@@ -1,4 +1,7 @@
 ---
 jruby_ver: '9.1.12.0'
+
+# https://s3.amazonaws.com/jruby.org/downloads/9.1.12.0/jruby-bin-9.1.12.0.tar.gz.sha256
+jruby_checksum: sha256:ddb23c95f4b3cc3fc1cc57b81cb4ceee776496ede402b9a6eb0622cf15e1a597
 jruby_mirror: https://s3.amazonaws.com/jruby.org/downloads
 jruby_install_parent_dir: /usr/local
