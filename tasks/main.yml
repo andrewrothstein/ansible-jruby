@@ -12,7 +12,7 @@
   become: yes
   become_user: root
   unarchive:
-    remote_src: yes
+    remote_src: yyes
     src: /tmp/{{jruby_tgz}}
     dest: '{{jruby_install_parent_dir}}'
     creates: '{{jruby_install_dir}}'
