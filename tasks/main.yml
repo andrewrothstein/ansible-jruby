@@ -6,6 +6,7 @@
     path: '{{jruby_install_dir}}'
   changed_when: False
   register: jruby_binary
+
 - when: not jruby_binary.stat.exists
   block:
     - name: download jruby
@@ -24,7 +25,7 @@
         src: /tmp/{{jruby_tgz}}
         dest: '{{jruby_install_parent_dir}}'
         creates: '{{jruby_install_dir}}'
-  akways:
+  always:
     - name: cleanup
       become: yes
       become_user: root
