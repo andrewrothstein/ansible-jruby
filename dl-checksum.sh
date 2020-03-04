@@ -10,4 +10,4 @@ dl_ver() {
     printf "  '%s': sha256:%s\n" $ver $(curl -sSL $url)
 }
 
-dl_ver ${1:-9.2.9.0}
+dl_ver ${1:-9.2.10.0}
