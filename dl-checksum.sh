@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 DIR=~/Downloads
 MIRROR=https://s3.amazonaws.com/jruby.org/downloads
 
@@ -10,4 +11,4 @@ dl_ver() {
     printf "  '%s': sha256:%s\n" $ver $(curl -sSL $url)
 }
 
-dl_ver ${1:-9.2.11.1}
+dl_ver ${1:-9.2.12.0}
