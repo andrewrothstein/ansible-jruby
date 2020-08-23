@@ -1,6 +1,6 @@
 ---
 jruby_mirror: https://s3.amazonaws.com/jruby.org/downloads
-jruby_ver: '9.2.12.0'
+jruby_ver: '9.2.13.0'
 jruby_install_parent_dir: /usr/local
 
 jruby_checksums:
@@ -24,3 +24,5 @@ jruby_checksums:
   '9.2.11.1': sha256:f10449c82567133908e5e1ac076438307a7f0916f617f40fa314b78873a195dc
   # https://s3.amazonaws.com/jruby.org/downloads/9.2.12.0/jruby-bin-9.2.12.0.tar.gz.sha256
   '9.2.12.0': sha256:307f6124c4301d723e2d0ff4c0105fa9eee8950c3f9971e14bbe8862030e6c04
+  # https://s3.amazonaws.com/jruby.org/downloads/9.2.13.0/jruby-bin-9.2.13.0.tar.gz.sha256
+  '9.2.13.0': sha256:73a8c241a162e644c87e864c3485c55adedeb82a6fd80fa3cb538fdacda7af58
