@@ -3,7 +3,7 @@ dependencies:
   version: v1.2.0
 - openjdk_app: jre
   role: andrewrothstein.openjdk
-  version: v2.0.15
+  version: v2.0.16
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
@@ -26,7 +26,6 @@ galaxy_info:
     - 8
   - name: Fedora
     versions:
-    - 34
     - 35
   - name: Ubuntu
     versions:
