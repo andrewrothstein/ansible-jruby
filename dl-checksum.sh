@@ -8,7 +8,7 @@ dl_ver() {
     local url=$MIRROR/$ver/jruby-bin-${ver}.tar.gz.sha256
 
     printf "  # %s\n" $url
-    printf "  '%s': sha256:%s\n" $ver $(curl -sSL $url)
+    printf "  '%s': sha256:%s\n" $ver $(curl -sSLf $url)
 }
 
-dl_ver ${1:-9.3.3.0}
+dl_ver ${1:-9.3.4.0}
