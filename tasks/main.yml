@@ -1,16 +1,20 @@
 ---
+- include_role:
+    name: andrewrothstein.unarchive-deps
+- include_role:
+    name: andrewrothstein.temurin
 - name: look for existing installation in {{ jruby_install_dir }}
-  become: yes
+  become: true
   become_user: root
   stat:
     path: '{{ jruby_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: jruby_binary
 
 - when: not jruby_binary.stat.exists
   block:
     - name: downloading {{ jruby_url }}
-      become: yes
+      become: true
       become_user: root
       get_url:
         url: '{{ jruby_url }}'
@@ -18,23 +22,23 @@
         checksum: '{{ jruby_checksum }}'
         mode: 0644
     - name: unarchiving {{ jruby_tmp_tgz }}
-      become: yes
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
+        remote_src: true
         src: '{{ jruby_tmp_tgz }}'
         dest: '{{ jruby_install_parent_dir }}'
         creates: '{{ jruby_install_dir }}'
   always:
     - name: rm {{ jruby_tmp_tgz }}
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ jruby_tmp_tgz }}'
         state: absent
 
 - name: linking {{ jruby_link_dir }} to {{ jruby_install_dir }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ jruby_install_dir }}'
@@ -42,7 +46,7 @@
     state: link
 
 - name: add to path
-  become: yes
+  become: true
   become_user: root
   with_items:
     - f: jruby.sh
