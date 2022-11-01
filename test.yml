@@ -3,7 +3,7 @@
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    - command: /usr/local/jruby/bin/jruby --version
+    - command: bash -lc 'jruby --version'
       register: jruby_test_output
     - name: jruby --version
       debug:
