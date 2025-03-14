@@ -1,10 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.jruby
+  hosts: all
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    - command: bash -lc 'jruby --version'
+    - name: Executing 'jruby --version'
+      ansible.builtin.command: bash -lc 'jruby --version'
+      changed_when: false
       register: jruby_test_output
-    - name: jruby --version
-      debug:
+    - name: Output from 'jruby --version'
+      ansible.builtin.debug:
         msg: '{{ jruby_test_output.stdout }}'

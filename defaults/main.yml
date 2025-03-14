@@ -1,6 +1,6 @@
 ---
 jruby_mirror: https://s3.amazonaws.com/jruby.org/downloads
-jruby_ver: '9.4.1.0'
+jruby_ver: '9.4.11.0'
 jruby_install_parent_dir: /usr/local
 
 jruby_checksums:
@@ -54,3 +54,23 @@ jruby_checksums:
   '9.4.0.0': sha256:897bb8a98ad43adcbf5fd3aa75ec85b3312838c949592ca3f623dc1f569d2870
   # https://s3.amazonaws.com/jruby.org/downloads/9.4.1.0/jruby-bin-9.4.1.0.tar.gz.sha256
   '9.4.1.0': sha256:5e0cce40b7c42f8ad0f619fdd906460fe3ef13444707f70eb8abfc6481e0d6b6
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.2.0/jruby-bin-9.4.2.0.tar.gz.sha256
+  '9.4.2.0': sha256:c2b065c5546d398343f86ddea68892bb4a4b4345e6c8875e964a97377733c3f1
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.3.0/jruby-bin-9.4.3.0.tar.gz.sha256
+  '9.4.3.0': sha256:b097e08c5669e8a188288e113911d12b4ad2bd67a2c209d6dfa8445d63a4d8c9
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.4.0/jruby-bin-9.4.4.0.tar.gz.sha256
+  '9.4.4.0': sha256:6ab12670afd8e5c8ac9305fabe42055795c5ddf9f8e8f1a1e60e260f2d724cc0
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.5.0/jruby-bin-9.4.5.0.tar.gz.sha256
+  '9.4.5.0': sha256:a40f78c4641ccc86752e16b2da247fd6bc9fbcf9a4864cf1be36f7ff7b35684c
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.6.0/jruby-bin-9.4.6.0.tar.gz.sha256
+  '9.4.6.0': sha256:2da14de4152b71fdbfa35ba4687a46ef12cd465740337b549cc1fe6c7c139813
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.7.0/jruby-bin-9.4.7.0.tar.gz.sha256
+  '9.4.7.0': sha256:f1c39f8257505300a528ff83fe4721fbe61a855abb25e3d27d52d43ac97a4d80
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.8.0/jruby-bin-9.4.8.0.tar.gz.sha256
+  '9.4.8.0': sha256:347b6692bd9c91c480a45af25ce88d77be8b6e4ac4a77bc94870f2c5b54bc929
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.9.0/jruby-bin-9.4.9.0.tar.gz.sha256
+  '9.4.9.0': sha256:8d64736e66a3c0e1e1ea813b6317219c5d43769e5d06a4417311e2baa8b40ef7
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.10.0/jruby-bin-9.4.10.0.tar.gz.sha256
+  '9.4.10.0': sha256:0b325bb6e64896dfcf235bbc6506ca9b5af78f1c8fec7f048bc4188b1793b5e0
+  # https://s3.amazonaws.com/jruby.org/downloads/9.4.11.0/jruby-bin-9.4.11.0.tar.gz.sha256
+  '9.4.11.0': sha256:cf4067bdc3a6ab518c786588e2486adc047b9cea0b96a43218b03ac651d26e11

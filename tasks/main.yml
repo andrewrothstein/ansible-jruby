@@ -1,60 +1,64 @@
 ---
-- include_role:
-    name: andrewrothstein.unarchive-deps
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
+    name: andrewrothstein.unarchivedeps
+- name: Installing andrewrothstein.bash
+  ansible.builtin.include_role:
     name: andrewrothstein.bash
-- include_role:
+- name: Installing andrewrothstein.temurin
+  ansible.builtin.include_role:
     name: andrewrothstein.temurin
-- name: look for existing installation in {{ jruby_install_dir }}
+- name: Look for existing installation in {{ jruby_install_dir }}
   become: true
   become_user: root
-  stat:
+  ansible.builtin.stat:
     path: '{{ jruby_install_dir }}'
   changed_when: false
   register: jruby_binary
 
-- when: not jruby_binary.stat.exists
+- name: Downloading and installing jruby
+  when: not jruby_binary.stat.exists
   block:
-    - name: downloading {{ jruby_url }}
+    - name: Downloading {{ jruby_url }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ jruby_url }}'
         dest: '{{ jruby_tmp_tgz }}'
         checksum: '{{ jruby_checksum }}'
-        mode: 0644
-    - name: unarchiving {{ jruby_tmp_tgz }}
+        mode: '644'
+    - name: Unarchiving {{ jruby_tmp_tgz }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ jruby_tmp_tgz }}'
         dest: '{{ jruby_install_parent_dir }}'
         creates: '{{ jruby_install_dir }}'
   always:
-    - name: rm {{ jruby_tmp_tgz }}
+    - name: Rrm -f {{ jruby_tmp_tgz }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ jruby_tmp_tgz }}'
         state: absent
 
-- name: linking {{ jruby_link_dir }} to {{ jruby_install_dir }}
+- name: Linking {{ jruby_link_dir }} to {{ jruby_install_dir }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ jruby_install_dir }}'
     dest: '{{ jruby_link_dir }}'
     state: link
 
-- name: add to path
+- name: Adding jruby to default shell path
   become: true
   become_user: root
   with_items:
     - f: jruby.sh
       d: /etc/profile.d
-      m: '0644'
-  template:
+      m: '644'
+  ansible.builtin.template:
     src: '{{ item.f }}.j2'
     dest: '{{ item.d }}/{{ item.f }}'
     mode: '{{ item.m }}'
