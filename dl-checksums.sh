@@ -11,13 +11,4 @@ dl_ver() {
     printf "  '%s': sha256:%s\n" $ver $(curl -sSLf $url)
 }
 
-dl_ver 9.4.2.0
-dl_ver 9.4.3.0
-dl_ver 9.4.4.0
-dl_ver 9.4.5.0
-dl_ver 9.4.6.0
-dl_ver 9.4.7.0
-dl_ver 9.4.8.0
-dl_ver 9.4.9.0
-dl_ver 9.4.10.0
-dl_ver ${1:-9.4.11.0}
+dl_ver ${1:-10.0.0.0}
